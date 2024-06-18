@@ -23,7 +23,7 @@ function pasteSelection() {
       },
       () => {
         if (chrome.runtime.lastError) {
-          console.log("Bhai error hogaya during injection!");
+          alert("It a runtime error.Please Try again later.");
           console.error(chrome.runtime.lastError.message);
         } else {
           // Send the message after the script is injected
@@ -31,13 +31,12 @@ function pasteSelection() {
             tabs[0].id,
             { method: "getSelection" },
             function (response) {
-              if (chrome.runtime.lastError) {
-                console.log("Bhai error hogaya!");
-                console.error(chrome.runtime.lastError.message);
-              } else {
+              if (response && response.data) {
                 console.log("Hello World 3: ", response);
                 var text = document.getElementById("text");
                 text.innerHTML = response.data;
+              } else {
+                alert("Text not Selected.");
               }
             }
           );
@@ -53,7 +52,7 @@ function summarizeText() {
     alert("Please paste or enter some text to summarize.");
     return;
   }
-  var summary = "Krish ki summary";
+  var summary = "Krish ki summary" + text;
   document.getElementById("summary").innerText = summary;
 }
 
