@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Text Summarizer",
+    "version": "1.0",
+    "description": "Summarize selected text on any webpage.",
+    "permissions": [
+      "activeTab",
+      "scripting"
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "logo_16.jpg",
+        "48": "logo_48.jpg",
+        "128": "logo_128.jpg"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["contentScript.js"]
+      }
+    ]
+  }
