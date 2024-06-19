@@ -1,13 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <title>Text Summarizer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        padding: 20px;
+        width: 300px;
+      }
+      textarea {
+        width: 100%;
+        height: 150px;
+        margin-bottom: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        resize: vertical;
+      }
+      button {
+        padding: 10px 20px;
+        margin-right: 10px;
+        margin-left: 2px;
+        background-color: #5ab436;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #038d2c;
+      }
+      #summary {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        min-height: 150px;
+        white-space: pre-wrap;
+      }
+    </style>
     <script src="popup.js"></script>
   </head>
   <body>
-    <textarea id="text"> </textarea>
+    <textarea id="text" placeholder="Paste text here..."></textarea>
+    <br />
     <button id="paste">Paste Selection</button>
     <button id="summarizeButton">Summarize Text</button>
+    <h2>Your Summary is: </h2>
     <div id="summary"></div>
   </body>
 </html>

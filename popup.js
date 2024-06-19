@@ -52,28 +52,6 @@ function summarizeText() {
     alert("Please paste or enter some text to summarize.");
     return;
   }
-  var summary = "Krish ki summary" + text;
+  var summary = "Krish ki summary " + text;
   document.getElementById("summary").innerText = summary;
 }
-
-// function pasteSelection() {
-//   console.log("Hello World 1");
-//   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-//     console.log("Hello World 2");
-//     chrome.tabs.sendMessage(
-//       tabs[0].id,
-//       { method: "getSelection" },
-//       function (response) {
-//         if (chrome.runtime.lastError) {
-//           console.log("Bhai error hogaya!");
-//           console.error(chrome.runtime.lastError.message);
-//         } else {
-//           console.log("hello world 3: ", response);
-//           var text = document.getElementById("text");
-//           // text.innerHTML = "Krish Was here!";
-//           text.innerHTML = response.data;
-//         }
-//       }
-//     );
-//   });
-// }
