@@ -38,16 +38,17 @@
         border: 1px solid #ccc;
         min-height: 150px;
         white-space: pre-wrap;
+        font-size: medium;
       }
     </style>
-    <script src="popup.js"></script>
+    <script type="module" src="popup.js"></script>
   </head>
   <body>
     <textarea id="text" placeholder="Paste text here..."></textarea>
     <br />
     <button id="paste">Paste Selection</button>
     <button id="summarizeButton">Summarize Text</button>
-    <h2>Your Summary is: </h2>
+    <h2>Your Summary is:</h2>
     <div id="summary"></div>
   </body>
 </html>
